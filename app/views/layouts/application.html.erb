@@ -10,6 +10,20 @@
   </head>
 
   <body>
+    <nav style="background-color: lightgrey; padding: 16px;">
+      <h1>Navbar</h1>
+      <ul>
+        <li><%= link_to 'home', root_path %></li>
+        <li><%= link_to 'about', about_us_path %></li>
+        <li><%= link_to 'contact', contact_path %></li>
+      </ul>
+      <form action="/contact" method="post">
+        <input type="text" name="member" placeholder="Who are you looking for?" value="<%= params[:member] %>">
+        <input type="text" name="hello">
+        <input type="submit">
+      </form>
+    </nav>
     <%= yield %>
+    <footer style="background-color: blue; padding: 16px; color: white">Footer</footer>
   </body>
 </html>
